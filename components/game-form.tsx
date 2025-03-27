@@ -19,8 +19,8 @@ interface GameFormProps {
 
 export function GameForm({ game, onClose }: GameFormProps) {
   // 将游戏控制初始化为数组
-  const initialControls = Array.isArray(game?.controls) 
-    ? [...game.controls]  // 这里使用展开运算符创建一个副本
+  const initialControls = Array.isArray(game?.controls) && game !== null && game !== undefined
+    ? [...game.controls]
     : [
         { label: "Mouse", action: "Point and click to screw/unscrew bolts" },
         { label: "Touch", action: "Tap to screw/unscrew bolts" },
