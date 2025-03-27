@@ -23,15 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* 移除直接添加的脚本标签，改用 Next.js 的 Script 组件 */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet" />
-      </head>
-      <body>
-        {children}
-        
-        {/* 使用 Next.js Script 组件添加 Google Analytics */}
+        {/* Google Analytics 跟踪代码 */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-KS4NZWBEPH"
           strategy="afterInteractive"
@@ -44,6 +36,12 @@ export default function RootLayout({
             gtag('config', 'G-KS4NZWBEPH');
           `}
         </Script>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet" />
+      </head>
+      <body>
+        {children}
       </body>
     </html>
   );
