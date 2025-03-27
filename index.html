@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 动态标题模板 -->
+    <title>Nuts and Bolts Puzzle - Daily Challenge - randgame.online</title>
+    <!-- 智能description生成 -->
+    <meta name="description" content="Play free online games at randgame.online! New game daily - Today: Nuts and Bolts Puzzle. No downloads needed, play instantly in your browser. Perfect for quick breaks!">
+    <link rel="canonical" href="https://randgame.online/daily/2023-05-15/nuts-and-bolts-puzzle">
+    
+    <!-- 添加更多SEO相关meta标签 -->
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Nuts and Bolts Puzzle - Daily Challenge - randgame.online">
+    <meta property="og:description" content="Play free online games at randgame.online! New game daily - Today: Nuts and Bolts Puzzle. No downloads needed, play instantly in your browser. Perfect for quick breaks!">
+    <!-- <meta property="og:image" content="https://randgame.online/images/games/nuts-and-bolts-puzzle.jpg">
+    <meta property="og:url" content="https://randgame.online/daily/2023-05-15/nuts-and-bolts-puzzle"> -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Daily Random Game">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nuts and Bolts Puzzle - Daily Challenge - randgame.online">
+    <meta name="twitter:description" content="Play free online games at randgame.online! New game daily - Today: Nuts and Bolts Puzzle. No downloads needed, play instantly in your browser. Perfect for quick breaks!">
+    <!-- <meta name="twitter:image" content="https://randgame.online/images/games/nuts-and-bolts-puzzle.jpg"> -->
+    
+    <meta name="keywords" content="online games, free games, browser games, casual games, puzzle games, arcade games, daily games, web games, html5 games, no download games, games for work, quick games">
+    
+    <!-- JSON-LD 结构化数据 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Daily Random Game",
+      "url": "https://randgame.online",
+      "description": "Free online games updated daily. Play instantly without downloads.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://randgame.online/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <!-- FAQ 结构化数据 -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can Nuts and Bolts Puzzle always be solved?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not every Nuts and Bolts Puzzle has a guaranteed solution. However, many Nuts and Bolts Puzzle puzzles are specifically created to be solvable if played strategically, especially when features like shuffle or undo are available."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Nuts and Bolts Puzzle more difficult than chess?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nuts and Bolts Puzzle and chess require different skills. Chess is about deep strategy and pure logic, while Nuts and Bolts Puzzle combines strategy, pattern recognition, and some luck. Both have complexities, but Nuts and Bolts Puzzle might feel more relaxed and approachable for beginners."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Nuts and Bolts Puzzle really good for your brain?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely! Nuts and Bolts Puzzle helps sharpen your mind by enhancing memory, pattern recognition, and strategic thinking. Regular play has even been shown to help maintain cognitive functions and reduce stress."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are the basic rules of Nuts and Bolts Puzzle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In Nuts and Bolts Puzzle (Nuts and Bolts Solitaire), the goal is simple: match pairs of identical free tiles to remove them from the board. Tiles are free if they're not covered and have at least one side (left or right) open. Clear all tiles to win!"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you need to speak Chinese to play Nuts and Bolts Puzzle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not at all. Nuts and Bolts Puzzle tiles have symbols and numbers that anyone can easily learn, regardless of language. Nuts and Bolts Puzzle is fully visual, making it universally playable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is Nuts and Bolts Puzzle luck or skill?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nuts and Bolts Puzzle blends skill and luck. Successful play requires careful planning, strategic moves, and thoughtful tile selection—but occasionally, luck also plays its part. That's part of what makes it fun!"
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* 调整颜色变量 */
+        :root {
+            --deep-space-blue: #1a1a2e;
+            --vibrant-orange: #ff4d00;
+            --accent-purple: #7f5af0;
+            --text-light: #fffffe;
+            --text-muted: #b0b0b0;
+            --card-bg: rgba(30, 30, 50, 0.9);
+            --heading-color: #f0f0f0;
+            --text-color: #e0e0e0;
+            --border-color: #3d3d5c;
+        }
+        
+        /* 调整文本颜色 */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--deep-space-blue);
+            color: var(--text-light);
+            min-height: 100vh;
+            overflow-y: auto;
+        }
+        .game-container {
+            aspect-ratio: 16/9;
+            max-height: 80vh;
+        }
+        @media (max-width: 768px) {
+            .game-container {
+                aspect-ratio: 4/3;
+                height: 70vh;
+            }
+        }
+        /* New styles */
+        .content-card {
+            background-color: var(--card-bg);
+            border-left: 4px solid var(--vibrant-orange);
+            backdrop-filter: blur(10px);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s;
+        }
+        .content-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.7), 0 0 15px rgba(255, 77, 0, 0.3);
+            border-left: 4px solid var(--accent-purple);
+        }
+        .control-item {
+            background-color: rgba(45, 45, 75, 0.7);
+            border: 1px solid #333355;
+            transition: all 0.3s;
+            border-radius: 8px;
+        }
+        .control-item:hover {
+            background-color: rgba(37, 37, 67, 0.9);
+            transform: translateX(8px);
+            border-color: var(--vibrant-orange);
+        }
+        .control-item p {
+            margin: 0; /* Remove paragraph spacing */
+            line-height: 1.5; /* Adjust line height */
+        }
+        .control-label {
+            display: inline-block; /* Make label and content in the same line */
+            margin-right: 8px; /* Add right margin */
+            color: var(--vibrant-orange);
+        }
+        .control-action {
+            display: inline-block; /* Make action description in the same line */
+            color: var(--text-light);
+        }
+        .daily-badge {
+            background: linear-gradient(135deg, var(--vibrant-orange), #ff7e00);
+            color: white;
+            padding: 0.35rem 1rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            display: inline-block;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(255, 77, 0, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-family: 'Poppins', sans-serif;
+            transform: rotate(-2deg);
+            transition: transform 0.3s;
+        }
+        .daily-badge:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+        .header-subtitle {
+            color: var(--text-light);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+            max-width: 800px;
+            margin: 0 auto;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        @media (max-width: 768px) {
+            .header-subtitle {
+                white-space: normal;
+                font-size: 1rem;
+                padding: 0 15px;
+                line-height: 1.4;
+            }
+        }
+        /* CRT 显示器效果 */
+        .crt-effect {
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+            background-size: 100% 4px;
+            position: relative;
+        }
+        
+        .crt-effect::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                rgba(255, 0, 0, 0.05),
+                rgba(0, 255, 0, 0.05),
+                rgba(0, 0, 255, 0.05)
+            );
+            pointer-events: none;
+        }
+
+        /* 修改波纹背景，使其更浅 */
+        .ripple-bg {
+            background: radial-gradient(circle at 10% 20%, #252550 0%, #131328 90%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 添加微妙的动态效果 */
+        .ripple-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 77, 0, 0.1), transparent 80%);
+            animation: pulse 15s infinite ease-in-out;
+            z-index: 0;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.5); }
+            100% { opacity: 0.3; transform: scale(1); }
+        }
+
+        /* 优化倒计时组件 */
+        .countdown-container {
+            position: fixed;
+            top: 15px;
+            right: 20px;
+            background: var(--card-bg);
+            padding: 12px 18px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(8px);
+            z-index: 100;
+            border: 1px solid rgba(255, 77, 0, 0.3);
+        }
+        
+        .countdown-label {
+            font-size: 0.8rem;
+            color: var(--vibrant-orange);
+            margin-bottom: 4px;
+        }
+        
+        .countdown-time {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--vibrant-orange);
+            text-shadow: 0 0 10px rgba(255, 77, 0, 0.5);
+        }
+
+        /* 完全重写压力表样式 */
+        .stress-meter-container {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(22, 22, 46, 0.8);
+            padding: 10px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 77, 0, 0.3);
+            z-index: 4;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        .stress-meter {
+            width: 20px;
+            height: 120px;
+            background: rgba(37, 37, 67, 0.6);
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .stress-level {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: linear-gradient(to top, #4ade80, #facc15, #ff4d00);
+            transition: height 0.5s ease;
+        }
+        
+        .stress-text {
+            writing-mode: vertical-lr;
+            transform: rotate(180deg);
+            color: var(--vibrant-orange);
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        
+        /* 添加NEW标签 */
+        .new-tag {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: linear-gradient(135deg, #ff4d00, #ff7e00);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: bold;
+            padding: 3px 6px;
+            border-radius: 4px;
+            transform: rotate(15deg);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        /* 修复iframe点击问题 */
+        .game-container, .game-reveal {
+            position: relative;
+            z-index: 5; /* 确保高于其他元素 */
+            pointer-events: auto; /* 确保可点击 */
+        }
+        
+        iframe {
+            pointer-events: auto !important; /* 强制允许点击 */
+        }
+        
+        /* 确保固定元素不会覆盖iframe */
+        .countdown-container, .stress-meter-container {
+            z-index: 4; /* 低于游戏容器 */
+            pointer-events: auto; /* 允许点击 */
+        }
+        
+        /* 调整加载动画层级 */
+        #loadingAnimation {
+            z-index: 10; /* 确保加载时在最上层 */
+        }
+
+        /* 确保页面可以滚动 */
+        body {
+            min-height: 100vh;
+            overflow-y: auto;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 调整文字颜色 */
+        .text-gray-900 {
+            color: var(--heading-color) !important;
+        }
+        
+        .text-gray-500, .text-gray-600 {
+            color: var(--text-muted) !important;
+        }
+
+        /* 边框颜色调整 */
+        .border-gray-200 {
+            border-color: var(--border-color) !important;
+        }
+
+        /* 游戏容器调整 */
+        .game-container, .game-reveal {
+            border: 2px solid #334155;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+        }
+
+        /* 标题样式更新 */
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--heading-color) !important;
+            text-shadow: 0 0 15px rgba(255, 77, 0, 0.3);
+        }
+        
+        /* 加载动画样式 */
+        #loadingAnimation {
+            background: radial-gradient(circle at center, #1e293b, #0f172a);
+        }
+        
+        #loadingAnimation div {
+            color: #a78bfa;
+            text-shadow: 0 0 10px rgba(167, 139, 250, 0.7);
+            animation: fadeInOut 2s infinite;
+        }
+        
+        @keyframes fadeInOut {
+            0% { opacity: 0.3; }
+            50% { opacity: 1; }
+            100% { opacity: 0.3; }
+        }
+        
+        /* 页脚样式更新 */
+        footer {
+            color: var(--text-muted);
+        }
+
+        /* 修复页面滚动问题 */
+        html, body {
+            height: auto;
+            min-height: 100vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        
+        /* 确保主容器不受固定元素影响 */
+        .container {
+            position: relative;
+            z-index: 1;
+            padding-bottom: 60px; /* 为页脚留出空间 */
+        }
+        
+        /* 调整游戏容器，确保不会阻止滚动 */
+        .game-reveal {
+            position: relative;
+            z-index: 1;
+            max-height: 80vh;
+        }
+        
+        /* 确保波纹背景不会阻止滚动 */
+        .ripple-bg::before {
+            position: fixed;
+            pointer-events: none;
+        }
+        
+        /* 调整固定元素，确保它们不会覆盖内容 */
+        .countdown-container, .stress-meter-container {
+            z-index: 100;
+            pointer-events: none; /* 允许点击穿透 */
+        }
+        
+        /* 确保内容可以滚动 */
+        main {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* 调整页脚位置 */
+        footer {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+        }
+        
+        /* 游戏容器更新 */
+        .game-reveal {
+            transition: transform 0.5s, box-shadow 0.5s;
+            overflow: visible;
+        }
+        
+        .game-reveal:hover {
+            transform: scale(1.02);
+        }
+        
+        /* 难度指示进度条 */
+        .difficulty-meter {
+            margin-top: 1rem;
+            background: rgba(37, 37, 67, 0.4);
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .difficulty-level {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 75%; /* 设置难度等级 */
+            background: linear-gradient(90deg, #4ade80, #facc15, var(--vibrant-orange));
+        }
+        
+        .difficulty-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 0.25rem;
+        }
+        
+        /* 加载进度动画 */
+        .loading-progress {
+            width: 80%;
+            height: 6px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        
+        .loading-bar {
+            height: 100%;
+            width: 0%;
+            background: var(--vibrant-orange);
+            animation: loading 2s ease-in-out forwards;
+        }
+        
+        @keyframes loading {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        
+        /* 视差滚动效果 */
+        .parallax-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 20% 30%, rgba(255, 77, 0, 0.05) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 70%, rgba(127, 90, 240, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* 移除游戏封面艺术样式 */
+        .game-cover-art {
+            display: none;
+        }
+        
+        /* 移除挑战徽章样式 */
+        .challenge-badge {
+            display: none;
+        }
+
+        /* 增强链接可见性 */
+        a {
+            color: var(--vibrant-orange);
+            text-decoration: underline;
+            transition: color 0.2s;
+        }
+        
+        a:hover {
+            color: #ff7e00;
+        }
+        
+        /* 调整强调文本 */
+        strong {
+            color: var(--vibrant-orange);
+            font-weight: 700;
+        }
+
+        /* 每日游戏突出显示样式 */
+        .daily-highlight {
+            margin-top: -10px;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        /* 分享按钮容器样式优化 */
+        .share-container {
+            background: rgba(30, 30, 50, 0.8);
+            padding: 10px;
+            border-radius: 30px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 77, 0, 0.3);
+            position: fixed;
+            z-index: 10;
+        }
+        
+        /* 桌面端侧边栏位置 */
+        @media (min-width: 768px) {
+            .share-container {
+                left: 4px;
+                top: 50%;
+                transform: translateY(-50%);
+                flex-direction: column;
+                gap: 3px;
+            }
+        }
+        
+        /* 移动端底部位置 */
+        @media (max-width: 767px) {
+            .share-container {
+                left: 50%;
+                bottom: 15px;
+                top: auto;
+                transform: translateX(-50%);
+                flex-direction: row;
+                gap: 10px;
+            }
+        }
+        
+        .share-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .share-btn:hover {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .facebook-btn:hover {
+            background: rgba(24, 119, 242, 0.2);
+        }
+        
+        .twitter-btn:hover {
+            background: rgba(29, 161, 242, 0.2);
+        }
+        
+        .whatsapp-btn:hover {
+            background: rgba(37, 211, 102, 0.2);
+        }
+        
+        .copy-btn:hover {
+            background: rgba(99, 102, 241, 0.2);
+        }
+
+        /* 调整每日提醒文字样式 */
+        .daily-reminder {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-top: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            text-shadow: 0 0 10px rgba(255, 77, 0, 0.2);
+        }
+        
+        /* 增强每日游戏提示的视觉效果 */
+        .daily-highlight {
+            margin-bottom: 1.5rem;
+        }
+        
+        /* 移除多余的徽章 */
+        .daily-badge {
+            display: none;
+        }
+
+        /* 美化倒计时显示 */
+        .countdown-time {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--vibrant-orange);
+            text-shadow: 0 0 10px rgba(255, 77, 0, 0.5);
+        }
+        
+        /* 添加每日提醒艺术字样式 */
+        .daily-reminder-art {
+            display: none;
+        }
+        
+        /* 添加醒目的摸鱼口号样式 */
+        .slacker-motto {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.02em;
+            background: linear-gradient(90deg, #00c6ff, #0072ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0px 2px 8px rgba(0, 198, 255, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            display: inline-block;
+            transform: rotate(-1deg);
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: rotate(-1deg) translateY(0px); }
+            50% { transform: rotate(-1deg) translateY(-5px); }
+        }
+
+        /* 游戏容器自适应优化 */
+        @media (max-width: 767px) {
+            .game-container {
+                aspect-ratio: 16/9;
+                height: auto;
+                max-height: 75vh;
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+            }
+            
+            .game-reveal {
+                width: 100% !important;
+                height: auto !important;
+            }
+            
+            iframe {
+                width: 100% !important;
+                height: 100% !important;
+            }
+            
+            /* 确保倒计时和压力表在移动设备上不遮挡内容 */
+            .countdown-container {
+                top: auto;
+                bottom: 70px;
+                right: 10px;
+                padding: 6px 10px;
+                font-size: 0.9rem;
+            }
+            
+            .countdown-time {
+                font-size: 1.2rem;
+            }
+            
+            .stress-meter-container {
+                display: none; /* 在移动设备上隐藏压力表，节省空间 */
+            }
+            
+            /* 调整标题大小以适应移动设备 */
+            h1 {
+                font-size: 1.75rem !important;
+            }
+            
+            .header-subtitle {
+                font-size: 0.9rem !important;
+                line-height: 1.3;
+                padding: 0 10px;
+            }
+            
+            .slacker-motto {
+                font-size: 0.9rem;
+                padding: 0.25rem 0.5rem;
+            }
+            
+            /* 调整内容卡片在移动设备上的边距 */
+            .content-card {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+        }
+        
+        /* 解决iframe全屏问题 */
+        .game-reveal {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 比例 */
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .game-reveal iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KS4NZWBEPH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KS4NZWBEPH');
+</script>
+<body class="ripple-bg">
+    <!-- 添加视差背景 -->
+    <div class="parallax-bg" id="parallaxBg"></div>
+
+    <!-- 替换倒计时组件 -->
+    <div class="countdown-container">
+        <div class="countdown-label">Next Game Countdown</div>
+        <div class="countdown-time" id="countdown">23:59:59</div>
+    </div>
+
+    <!-- 替换压力表HTML结构 -->
+    <div class="stress-meter-container">
+        <div class="new-tag">NEW</div>
+        <div class="stress-text">GAMING STRESS</div>
+        <div class="stress-meter">
+            <div class="stress-level" style="height: 80%"></div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <header class="text-center mb-8">
+            <div class="daily-highlight animate-pulse">
+                <span class="bg-gradient-to-r from-orange-500 to-red-600 text-white px-5 py-2 rounded-full font-bold shadow-lg">
+                    <span class="mr-2">🔧</span>TODAY'S GAME<span class="ml-2">🔧</span>
+                </span>
+            </div>
+            
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Nuts and Bolts Puzzle</h1>
+            <p class="text-xl header-subtitle mb-3">Unscrew, strategize, and watch the planks fall in this thrilling puzzle game!</p>
+            <p class="slacker-motto">
+                <span>✨ Your daily dose of slacking off. Boss not watching? Game on! ✨</span>
+            </p>
+        </header>
+
+        <!-- 新的响应式分享容器 -->
+        <div class="share-container flex" id="shareButtons">
+            <button class="share-btn copy-btn" aria-label="Copy Link" onclick="shareGame('copy')" title="Copy Link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#6366F1"><path d="M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z"/></svg>
+            </button>
+            <button class="share-btn bookmark-btn" aria-label="Add to Bookmarks" onclick="bookmarkGame()" title="Add to Bookmarks">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#FFC107"><path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2z"/></svg>
+            </button>
+            <button class="share-btn feedback-btn" aria-label="Send Feedback" onclick="showFeedbackInfo()" title="Send Feedback">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#4ADE80">
+                    <path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- 新增反馈信息弹窗 -->
+        <div id="feedbackInfoModal" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 flex items-center justify-center z-50 opacity-0 invisible transition-all duration-300">
+            <div class="bg-opacity-90 bg-gray-900 p-6 rounded-xl border-l-4 border-orange-500 max-w-md mx-4 w-full">
+                <h3 class="text-xl font-bold mb-4 text-white">Send Feedback</h3>
+                <p class="mb-3 text-gray-100">Please send your feedback to the following email:</p>
+                <div class="bg-gray-800 p-3 rounded flex items-center justify-between mb-5">
+                    <span class="text-orange-400 font-medium select-all">mantq@qq.com</span>
+                    <button onclick="copyFeedbackEmail()" class="text-blue-400 hover:text-blue-300 text-sm">
+                        Copy
+                    </button>
+                </div>
+                <div class="flex justify-end">
+                    <button onclick="closeFeedbackInfo()" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded transition-colors">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 添加邮箱复制成功提示 -->
+        <div id="copyAlert" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-4 py-2 rounded-lg opacity-0 transition-opacity duration-300 z-50">
+            Website link copied to clipboard!
+        </div>
+
+        <main>
+            <div class="game-container relative mb-8 px-0">
+                <div class="game-reveal crt-effect w-full rounded-lg shadow-2xl relative">
+                    <iframe id="gameFrame" allowfullscreen allow="autoplay; fullscreen"></iframe>
+                    
+                    <div id="loadingAnimation" class="absolute inset-0 flex flex-col items-center justify-center bg-black">
+                        <div class="text-4xl text-white mb-4">Loading...</div>
+                        <div class="loading-progress">
+                            <div class="loading-bar"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-4">
+                    <div class="difficulty-label">
+                        <span>Difficulty Level</span>
+                        <span>Advanced</span>
+                    </div>
+                    <div class="difficulty-meter">
+                        <div class="difficulty-level"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="content-card rounded-xl p-6 shadow-md col-span-1">
+                    <h2 class="text-2xl font-bold mb-4 text-gray-900 border-b border-gray-200 pb-2">Game Controls</h2>
+                    <div class="grid grid-cols-1 gap-3">
+                        <div class="control-item p-3 mb-3">
+                            <p><span class="control-label">Mouse:</span> <span class="control-action">Point and click to screw/unscrew bolts</span></p>
+                        </div>
+                        <div class="control-item p-3 mb-3">
+                            <p><span class="control-label">Touch:</span> <span class="control-action">Tap to screw/unscrew bolts</span></p>
+                        </div>
+                        <div class="control-item p-3 mb-3">
+                            <p><span class="control-label">Timer:</span> <span class="control-action">Watch the clock and plan your moves</span></p>
+                        </div>
+                        <div class="control-item p-3">
+                            <p><span class="control-label">Power-ups:</span> <span class="control-action">Use special tools when available</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-card rounded-xl p-6 shadow-md col-span-2">
+                    <h2 class="text-2xl font-bold mb-4 text-gray-900 border-b border-gray-200 pb-2">About Today's Game</h2>
+                    <div class="prose max-w-none">
+                        <p class="mb-4">Ever gotten lost in a maze of planks and screws when trying to build an IKEA shelf? Well, Nuts and Bolts Puzzle is like the opposite of that! Instead of frantically trying to assemble stuff, you're gleefully taking everything apart - and the best part is: no confusing instructions required.</p>
+                        
+                        <h3 class="text-xl font-bold mt-5 mb-3 text-gray-900">Game Features</h3>
+                        <ul class="list-disc pl-5 mb-4 space-y-2">
+                            <li>Intuitive point-and-click mechanics</li>
+                            <li>Exciting timer challenge</li>
+                            <li>Helpful power-ups and boosters</li>
+                            <li>Hundreds of increasingly challenging levels</li>
+                            <li>Free to play and mobile-friendly</li>
+                        </ul>
+                        
+                        <h3 class="text-xl font-bold mt-5 mb-3 text-gray-900">Strategy Tips</h3>
+                        <p class="mb-4">Before making your first move, scan the board to identify essential bolts. Removing the wrong bolt early can block crucial holes with fallen planks. Plan two or three moves ahead, but don't spend too much time - the clock is ticking!</p>
+                        <p>Make use of special tools like the extra hole generator or timer freeze when you're in a tight spot. Look for opportunities to remove bolts that support multiple planks at once, but be careful not to block access to other bolts with fallen wood!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-card rounded-xl p-6 shadow-md mb-8">
+                <h2 class="text-2xl font-bold mb-4 text-gray-900 border-b border-gray-200 pb-2">About Daily Random Game</h2>
+                <div class="prose max-w-none">
+                    <p class="mb-4">Daily Random Game is a casual gaming platform designed for busy professionals and students. We understand that during intense work and study periods, a fun game can help you relax and relieve stress.</p>
+                    
+                    <p class="mb-4">Our unique feature is: <strong>one carefully selected game updated daily</strong>. No need to struggle with choosing which game to play - simply visit our website to experience the day's recommended exciting game.</p>
+                    
+                    <p>Whether you need a quick break during lunch or want to change your mood between study sessions, Daily Random Game provides the most convenient gaming experience. Remember to check back every day to see what game we've selected for you!</p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="mt-12 text-center text-gray-600 text-sm">
+            <p>© 2025 randgame.online - All Rights Reserved</p>
+            <p class="mt-2">Daily Random Game is for entertainment purposes only</p>
+        </footer>
+    </div>
+
+    <script>
+        // 添加视差滚动效果
+        window.addEventListener('scroll', function() {
+            const scrollY = window.scrollY;
+            document.getElementById('parallaxBg').style.transform = `translateY(${scrollY * 0.3}px)`;
+        });
+
+        // 初始化游戏时间变量
+        let gamePlayTime = 0;
+        
+        // 修复压力表功能
+        document.addEventListener('DOMContentLoaded', () => {
+            // 初始压力值
+            let stressLevel = 80; // 开始时较高
+            const stressLevelEl = document.querySelector('.stress-level');
+            if (stressLevelEl) {
+                stressLevelEl.style.height = `${stressLevel}%`;
+            }
+            
+            // 清除之前的计时器
+            if (window.stressInterval) clearInterval(window.stressInterval);
+            
+            // 设置新的计时器，随时间降低压力
+            window.stressInterval = setInterval(() => {
+                gamePlayTime++;
+                
+                // 每15秒降低5%的压力，最低到20%
+                if (gamePlayTime % 15 === 0 && stressLevel > 20) {
+                    stressLevel -= 5;
+                    if (stressLevelEl) {
+                        stressLevelEl.style.height = `${stressLevel}%`;
+                    }
+                }
+            }, 1000);
+        });
+
+        // 修复倒计时逻辑，确保显示正确的时间（无负号）
+        function updateCountdown() {
+            try {
+                // 获取当前时间
+                const now = new Date();
+                
+                // 获取美国东部时间的下一个午夜
+                const etOptions = { timeZone: "America/New_York" };
+                const etNow = new Date(now.toLocaleString('en-US', etOptions));
+                
+                // 设置东部时间的下一个午夜
+                const etTomorrow = new Date(etNow);
+                etTomorrow.setDate(etTomorrow.getDate() + 1);
+                etTomorrow.setHours(0, 0, 0, 0);
+                
+                // 计算时差（毫秒）
+                const diffMs = etTomorrow - etNow;
+                
+                // 转换为小时、分钟和秒
+                const hours = Math.floor(diffMs / (1000 * 60 * 60));
+                const minutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diffMs % (1000 * 60)) / 1000);
+                
+                // 确保显示正数
+                const formattedHours = Math.max(0, hours);
+                const formattedMinutes = Math.max(0, minutes);
+                const formattedSeconds = Math.max(0, seconds);
+                
+                // 更新倒计时显示，确保没有负号
+                document.getElementById('countdown').textContent = 
+                    `${String(formattedHours).padStart(2, '0')}:${String(formattedMinutes).padStart(2, '0')}:${String(formattedSeconds).padStart(2, '0')}`;
+                
+                // 更新标签
+                const countdownLabel = document.querySelector('.countdown-label');
+                if (countdownLabel) {
+                    countdownLabel.textContent = "Next Game Countdown";
+                }
+            } catch (error) {
+                console.error("Countdown error:", error);
+                // 出错时显示默认值
+                document.getElementById('countdown').textContent = "24:00:00";
+            }
+        }
+
+        // 每秒更新倒计时
+        setInterval(updateCountdown, 1000);
+        updateCountdown(); // 立即执行一次
+    </script>
+
+    <!-- 添加sitemap生成脚本 -->
+    <script>
+        // 这段代码仅用于演示sitemap生成逻辑
+        // 实际实现应该在服务器端
+        function generateSitemap() {
+            const today = new Date();
+            let sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n';
+            sitemap += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+            
+            // 添加首页
+            sitemap += '  <url>\n';
+            sitemap += '    <loc>https://randgame.online/</loc>\n';
+            sitemap += '    <lastmod>' + today.toISOString().split('T')[0] + '</lastmod>\n';
+            sitemap += '    <changefreq>daily</changefreq>\n';
+            sitemap += '    <priority>1.0</priority>\n';
+            sitemap += '  </url>\n';
+            
+            // 添加过去30天的游戏页面
+            for (let i = 0; i < 30; i++) {
+                const date = new Date();
+                date.setDate(date.getDate() - i);
+                const formattedDate = date.toISOString().split('T')[0];
+                
+                // 这里应该有一个游戏名称的映射，这里仅作示例
+                const gameSlug = i === 0 ? 'nuts-and-bolts-puzzle' : 'game-' + i;
+                
+                sitemap += '  <url>\n';
+                sitemap += '    <loc>https://randgame.online/daily/' + formattedDate + '/' + gameSlug + '</loc>\n';
+                sitemap += '    <lastmod>' + formattedDate + '</lastmod>\n';
+                sitemap += '    <changefreq>monthly</changefreq>\n';
+                sitemap += '    <priority>' + (1.0 - i * 0.03).toFixed(1) + '</priority>\n';
+                sitemap += '  </url>\n';
+            }
+            
+            sitemap += '</urlset>';
+            
+            // 在实际应用中，这里应该将sitemap写入文件
+            console.log("Sitemap generated:", sitemap);
+            return sitemap;
+        }
+        
+        // 这个函数应该在服务器端每天自动运行
+        // generateSitemap();
+    </script>
+    
+    <!-- URL结构优化脚本 -->
+    <script>
+        // 这段代码用于演示如何处理优化的URL结构
+        function handleOptimizedUrls() {
+            // 获取当前日期
+            const today = new Date();
+            const formattedDate = today.toISOString().split('T')[0]; // YYYY-MM-DD
+            
+            // 获取当前游戏名称并转换为slug
+            const gameTitle = document.querySelector('h1').textContent;
+            const gameSlug = gameTitle.toLowerCase().replace(/[^\w\s]/gi, '').replace(/\s+/g, '-');
+            
+            // 构建优化的URL
+            const optimizedUrl = `/daily/${formattedDate}/${gameSlug}`;
+            
+            // 更新canonical链接
+            document.querySelector('link[rel="canonical"]').setAttribute('href', 'https://randgame.online' + optimizedUrl);
+            
+            // 更新Open Graph URL
+            document.querySelector('meta[property="og:url"]').setAttribute('content', 'https://randgame.online' + optimizedUrl);
+            
+            // 如果支持History API，可以更新浏览器URL而不刷新页面
+            if (window.history && window.history.pushState) {
+                window.history.pushState({}, document.title, optimizedUrl);
+            }
+        }
+        
+        // 页面加载完成后执行
+        document.addEventListener('DOMContentLoaded', () => {
+            // 在实际应用中取消注释
+            // handleOptimizedUrls();
+        });
+    </script>
+
+    <script>
+        // 显示反馈信息弹窗
+        function showFeedbackInfo() {
+            const modal = document.getElementById('feedbackInfoModal');
+            modal.style.opacity = '1';
+            modal.style.visibility = 'visible';
+        }
+        
+        // 关闭反馈信息弹窗
+        function closeFeedbackInfo() {
+            const modal = document.getElementById('feedbackInfoModal');
+            modal.style.opacity = '0';
+            modal.style.visibility = 'hidden';
+        }
+        
+        // 复制反馈邮箱
+        function copyFeedbackEmail() {
+            const emailText = 'mantq@qq.com';
+            
+            // 使用更可靠的复制方法
+            try {
+                // 现代浏览器方法
+                navigator.clipboard.writeText(emailText)
+                    .then(() => {
+                        showEmailCopiedSuccess();
+                    })
+                    .catch(err => {
+                        // 如果clipboard API失败，尝试备用方法
+                        fallbackCopy(emailText);
+                    });
+            } catch (err) {
+                // 对于不支持clipboard API的浏览器，使用备用方法
+                fallbackCopy(emailText);
+            }
+        }
+        
+        // 显示邮箱复制成功消息
+        function showEmailCopiedSuccess() {
+            const copiedAlert = document.getElementById('emailCopiedAlert');
+            copiedAlert.textContent = "Email address copied to clipboard!";
+            copiedAlert.style.opacity = '1';
+            setTimeout(() => {
+                copiedAlert.style.opacity = '0';
+            }, 2000);
+        }
+        
+        // 备用复制方法
+        function fallbackCopy(text) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.opacity = '0';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                showEmailCopiedSuccess();
+            } catch (err) {
+                console.error('Copy failed', err);
+                alert('Copy failed. Please manually copy: mantq@qq.com');
+            }
+            
+            document.body.removeChild(textArea);
+        }
+        
+        // 点击弹窗外部关闭
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('feedbackInfoModal');
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeFeedbackInfo();
+                }
+            });
+            
+            // 检测移动设备并进行额外优化
+            function checkMobile() {
+                if (window.innerWidth <= 767) {
+                    // 移动设备上优化游戏容器高度
+                    const gameContainer = document.querySelector('.game-container');
+                    if (gameContainer) {
+                        const windowHeight = window.innerHeight;
+                        const maxHeight = Math.min(windowHeight * 0.5, 450); // 最大高度不超过屏幕的50%
+                        gameContainer.style.maxHeight = maxHeight + 'px';
+                    }
+                }
+            }
+            
+            // 页面加载和调整大小时执行
+            checkMobile();
+            window.addEventListener('resize', checkMobile);
+            
+            // 优化iframe加载
+            const gameFrame = document.getElementById('gameFrame');
+            if (gameFrame) {
+                gameFrame.src = "https://cloud.onlinegames.io/games/2025/unity/nuts-and-bolts-puzzle/index-og.html";
+            }
+        });
+    </script>
+
+    <!-- 更新分享&收藏功能 -->
+    <script>
+        // 简化分享功能，直接复制主域名
+        function shareGame(platform) {
+            if (platform === 'copy') {
+                // 直接使用主域名
+                const gameUrl = 'https://randgame.online';
+                
+                // 使用更可靠的复制方法
+                try {
+                    // 现代浏览器方法
+                    navigator.clipboard.writeText(gameUrl)
+                        .then(() => {
+                            showCopySuccess();
+                        })
+                        .catch(err => {
+                            // 如果clipboard API失败，尝试备用方法
+                            fallbackCopyLink(gameUrl);
+                        });
+                } catch (err) {
+                    // 对于不支持clipboard API的浏览器，使用备用方法
+                    fallbackCopyLink(gameUrl);
+                }
+            }
+        }
+        
+        // 显示链接复制成功消息
+        function showCopySuccess() {
+            const copyAlert = document.getElementById('copyAlert');
+            copyAlert.textContent = 'Website link copied to clipboard!';
+            copyAlert.style.backgroundColor = 'rgba(22, 163, 74, 0.9)';
+            copyAlert.style.opacity = '1';
+            setTimeout(() => {
+                copyAlert.style.opacity = '0';
+            }, 2000);
+        }
+        
+        // 网站链接备用复制方法
+        function fallbackCopyLink(text) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.opacity = '0';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                showCopySuccess();
+            } catch (err) {
+                console.error('Copy failed', err);
+                alert('Copy failed. Please manually copy: randgame.online');
+            }
+            
+            document.body.removeChild(textArea);
+        }
+        
+        // 显示收藏快捷键提示
+        function bookmarkGame() {
+            const bookmarkAlert = document.getElementById('bookmarkAlert');
+            
+            // 检测操作系统，显示对应快捷键
+            let shortcutText = '';
+            if (navigator.userAgent.indexOf('Mac') !== -1) {
+                shortcutText = 'Press Command+D to bookmark this page!';
+            } else {
+                shortcutText = 'Press Ctrl+D to bookmark this page!';
+            }
+            
+            bookmarkAlert.textContent = shortcutText;
+            bookmarkAlert.style.backgroundColor = 'rgba(37, 99, 235, 0.9)';
+            bookmarkAlert.style.opacity = '1';
+            setTimeout(() => {
+                bookmarkAlert.style.opacity = '0';
+            }, 3000);
+        }
+    </script>
+
+    <!-- 添加成功提示 -->
+    <div id="bookmarkAlert" class="fixed bottom-4 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white px-4 py-2 rounded-lg opacity-0 transition-opacity duration-300 z-50">
+        Press Ctrl+D to bookmark this page!
+    </div>
+</body>
+</html>
