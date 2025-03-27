@@ -2,12 +2,6 @@ import { createClient } from '@supabase/supabase-js'
 import CountdownTimer from '@/components/CountdownTimer'
 import ShareButtons from '@/components/ShareButtons'
 import StressMeter from '@/components/StressMeter'
-import dynamic from 'next/dynamic'
-
-// 导入客户端组件进行数据刷新
-//const GameRefresher = dynamic(() => import('../components/GameRefresher'), { ssr: false })
-
-const GameRefresher = dynamic(() => import('@/components/GameRefresher'), { ssr: false })
 
 // 定义游戏控制类型
 type GameControl = {
@@ -35,39 +29,33 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 )
 
-export const revalidate = 0; // 禁用缓存
-
-// 获取今日游戏 - 初始数据在服务器端获取
 async function getTodayGame() {
-  try {
-    const today = new Date().toISOString().split('T')[0]
-    console.log("服务器端获取日期为以下的游戏:", today)
+  const today = new Date().toISOString().split('T')[0]
+  
+  // 调试用 - 检查查询参数
+  console.log("Fetching game for date:", today)
+  
+  const { data, error } = await supabase
+    .from('games')
+    .select('*')
+    .eq('featured_date', today)
+    .single()
     
-    const { data, error } = await supabase
-      .from('games')
-      .select('*')
-      .eq('featured_date', today)
-      .single()
-      .withCache(false)  // 禁用 Supabase 缓存
-      
-    if (error) {
-      console.error('获取游戏数据出错:', error)
-      return null
-    }
-    
-    console.log("服务器端获取到的游戏数据:", data)
-    return data as Game
-  } catch (err) {
-    console.error("获取游戏时发生错误:", err)
+  if (error) {
+    console.error('Error fetching game:', error)
     return null
   }
+  
+  // 调试用 - 检查返回值
+  console.log("Retrieved game data:", data)
+  
+  return data as Game
 }
 
 export default async function Home() {
-  // 初始数据在服务器端获取
-  const initialGame = await getTodayGame()
+  const game = await getTodayGame()
   
-  if (!initialGame) {
+  if (!game) {
     return (
       <div className="ripple-bg min-h-screen flex items-center justify-center">
         <div className="text-white text-xl">
@@ -79,9 +67,6 @@ export default async function Home() {
 
   return (
     <main className="ripple-bg min-h-screen">
-      {/* 隐藏的客户端组件，用于定期刷新数据 */}
-      <GameRefresher />
-      
       <div className="parallax-bg" id="parallaxBg"></div>
       
       <CountdownTimer />
@@ -98,10 +83,10 @@ export default async function Home() {
             </span>
           </div>
           
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">{initialGame.title}</h1>
-          <p className="text-xl header-subtitle mb-3">{initialGame.description}</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">{game.title}</h1>
+          <p className="text-xl header-subtitle mb-3">{game.description}</p>
           <p className="slacker-motto">
-            <span>✨ <a href={`/${initialGame.slug}`}>#{initialGame.slug}</a> ✨</span>
+            <span>✨ <a href={`/${game.slug}`}>#{game.slug}</a> ✨</span>
           </p>
         </header>
 
@@ -109,7 +94,7 @@ export default async function Home() {
         <div className="game-container relative mb-8 px-0">
           <div className="game-reveal crt-effect w-full rounded-lg shadow-2xl relative">
             <iframe 
-              src={initialGame.embed_url}
+              src={game.embed_url}
               className="w-full aspect-video"
               allowFullScreen
             />
@@ -119,12 +104,12 @@ export default async function Home() {
           <div className="mt-4">
             <div className="difficulty-label">
               <span>Difficulty Level</span>
-              <span>{initialGame.difficulty} / 5</span>
+              <span>{game.difficulty} / 5</span>
             </div>
             <div className="difficulty-meter">
               <div 
                 className="difficulty-level"
-                style={{ width: `${(initialGame.difficulty / 5) * 100}%` }}
+                style={{ width: `${(game.difficulty / 5) * 100}%` }}
               ></div>
             </div>
           </div>
@@ -135,7 +120,7 @@ export default async function Home() {
           <div className="content-card rounded-xl p-6 shadow-md col-span-1">
             <h2 className="text-2xl font-bold mb-4 text-gray-900 border-b border-gray-200 pb-2">Game Controls</h2>
             <div className="grid grid-cols-1 gap-3">
-              {initialGame.controls && initialGame.controls.map((control, index) => (
+              {game.controls && game.controls.map((control, index) => (
                 <div key={index} className="control-item p-3 mb-3">
                   <p>
                     <span className="control-label text-orange-500">{control.label}:</span>
@@ -150,7 +135,7 @@ export default async function Home() {
           <div className="content-card rounded-xl p-6 shadow-md col-span-2">
             <h2 className="text-2xl font-bold mb-4 text-gray-900 border-b border-gray-200 pb-2">Strategy Tips</h2>
             <div className="prose max-w-none">
-              <p className="mb-4">{initialGame.strategy_tips}</p>
+              <p className="mb-4">{game.strategy_tips}</p>
             </div>
           </div>
         </div>
