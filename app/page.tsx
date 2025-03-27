@@ -9,7 +9,6 @@ import dynamic from 'next/dynamic'
 
 const GameRefresher = dynamic(() => import('@/components/GameRefresher'), { ssr: false })
 
-
 // 定义游戏控制类型
 type GameControl = {
   label: string
@@ -36,6 +35,8 @@ const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 )
 
+export const revalidate = 0; // 禁用缓存
+
 // 获取今日游戏 - 初始数据在服务器端获取
 async function getTodayGame() {
   try {
@@ -47,6 +48,7 @@ async function getTodayGame() {
       .select('*')
       .eq('featured_date', today)
       .single()
+      .withCache(false)  // 禁用 Supabase 缓存
       
     if (error) {
       console.error('获取游戏数据出错:', error)
