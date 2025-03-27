@@ -1,5 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Daily Random Game - Play A New Game Every Day',
@@ -22,11 +23,28 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* 移除直接添加的脚本标签，改用 Next.js 的 Script 组件 */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet" />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        
+        {/* 使用 Next.js Script 组件添加 Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-KS4NZWBEPH"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-KS4NZWBEPH');
+          `}
+        </Script>
+      </body>
     </html>
   );
 }
